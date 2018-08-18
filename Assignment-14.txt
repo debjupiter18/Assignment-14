@@ -1,0 +1,61 @@
+a) What is the difference between Internal Storage & External Storage?
+ 
+Internal Storage: By default, files saved to the internal storage are private to your application and other applications cannot access them. 
+When the user uninstalls your application, these files are removed/deleted. Your app user also can't access them using file manager; 
+even after enabling "show hidden files" option in file manager. To access files in Internal Storage, you have to root your Android phone. 
+So, this is NOT what we think as internal memory of the phone - Nexus 5's 32 GB internal memory.
+
+External Storage:
+
+    This can be a removable storage media (such as an SD card) or an internal (non-removable) storage
+
+    That means, both storage types like Nexus 6P's 64 GB internal memory and removable microSD card which we insert in phone's card slot are considered as External Storage.
+
+    Removable Storage means just microSD card storage, not the internal memory.
+
+    To store your app files in SD card, you may use File[] getExternalFilesDirs (String type) method in Context class. 
+	Generally, second returned path would be the storage path for microSD card (if any).  
+
+b) For how long the data resides in the cache?
+
+Clear app data — or resetting an app.  You're wiping the cache, but also clearing any and all settings that go along with that app. 
+You're basically starting that app over, from scratch, and it'll behave as it did the first time you installed it.
+
+c) What are the critical Permissions and Normal Permissions? What are the
+examples of each?
+
+The Normal permissions do not directly affect the user’s privacy. 
+If application lists a normal permission in its manifest, then these permissions will be automatically granted by the system upon installation. 
+Some of the most common normal permissions are given below.
+
+Check and change data connection: Include network state, Wi-Fi State, Bluetooth, Internet, etc.
+
+Example:
+
+CCESS_LOCATION_EXTRA_COMMANDS
+ACCESS_NETWORK_STATE
+ACCESS_NOTIFICATION_POLICY
+ACCESS_WIFI_STATE
+BLUETOOTH
+BLUETOOTH_ADMIN and many more are there.
+
+Critical permissions are those permissions which are associated with access of your sensitive data like Location, Contacts or writing some data to any external drive etc.
+Example:
+For instance, Google Maps would be pretty useless if it couldn’t access your location, but when a calculator app needs access to your contacts, 
+that should raise concern. This was the source of the Facebook Messenger app’s controversy a while ago, 
+because people felt that the app was overstepping its bound on permissions
+Some Google enlisted critical permissions can be like this--
+READ_CALENDAR
+WRITE_CALENDAR
+CAMERA
+READ_CONTACTS
+WRITE_CONTACTS
+GET_ACCOUNTS
+ACCESS_FINE_LOCATION
+ACCESS_COARSE_LOCATION
+RECORD_AUDIO
+READ_PHONE_STATE
+READ_PHONE_NUMBERS 
+CALL_PHONE
+ANSWER_PHONE_CALLS 
+READ_CALL_LOG
